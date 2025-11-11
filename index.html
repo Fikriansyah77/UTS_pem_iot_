@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌡️ IoT Sensor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>🌡️ IoT Sensor Dashboard</h1>
+            <p>Real-time Monitoring Suhu, Kelembapan, dan Kecerahan</p>
+        </header>
+
+        <!-- Current Data Section -->
+        <section class="current-data">
+            <h2>📊 Data Terkini</h2>
+            <div class="sensor-cards">
+                <div class="sensor-card temperature">
+                    <h3>Suhu</h3>
+                    <p class="value" id="current-temp">-- °C</p>
+                </div>
+                <div class="sensor-card humidity">
+                    <h3>Kelembapan</h3>
+                    <p class="value" id="current-humidity">-- %</p>
+                </div>
+                <div class="sensor-card light">
+                    <h3>Kecerahan</h3>
+                    <p class="value" id="current-light">-- lux</p>
+                </div>
+            </div>
+            <p class="timestamp" id="last-update">Terakhir update: --</p>
+        </section>
+
+        <!-- Summary Statistics -->
+        <section class="summary">
+            <h2>📈 Statistik</h2>
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <h4>Suhu Maksimum</h4>
+                    <p id="max-temp">-- °C</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Suhu Minimum</h4>
+                    <p id="min-temp">-- °C</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Suhu Rata-rata</h4>
+                    <p id="avg-temp">-- °C</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Total Data</h4>
+                    <p id="total-data">--</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Data -->
+        <section class="historical-data">
+            <h2>📋 Data Historis (10 Terbaru)</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Suhu (°C)</th>
+                            <th>Kelembapan (%)</th>
+                            <th>Kecerahan (lux)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center;">Loading data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- System Status -->
+        <section class="status-section">
+            <h2>🔧 Status Sistem</h2>
+            <div class="status-cards">
+                <div class="status-card">
+                    <h4>Backend API</h4>
+                    <p id="api-status">Checking...</p>
+                </div>
+                <div class="status-card">
+                    <h4>Database</h4>
+                    <p id="db-status">Checking...</p>
+                </div>
+                <div class="status-card">
+                    <h4>Update Terakhir</h4>
+                    <p id="system-time">--</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
